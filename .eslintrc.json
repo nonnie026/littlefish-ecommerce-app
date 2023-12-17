@@ -1,0 +1,65 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": ["!**/*", "build/**/*", "!*.config.ts"],
+  "plugins": ["react", "@typescript-eslint"],
+  "overrides": [
+    // {
+    // 	"files": ["tests/**", "*.test.tsx", "*.test.ts"],
+    // 	"plugins": ["vitest"],
+    // 	"extends": ["plugin:vitest/recommended"]
+    // },
+    // {
+    //   "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+    //   "excludedFiles": ["*.d.ts", "*.schema.ts"],
+    //   "extends": [
+    //     "plugin:xss/recommended",
+    //     "plugin:security/recommended",
+    //     "plugin:perfectionist/recommended-natural",
+    //     "plugin:anti-trojan-source/recommended"
+    //   ],
+    //   "plugins": ["xss", "security", "no-secrets", "misc", "react-hooks"],
+    //   "rules": {
+    //     // ... [include all your existing rules here] ...
+    //     // Add or adjust rules specific to React if necessary.
+    //     "react-hooks/exhaustive-deps": "warn",
+    //     "react/prop-types": "off",
+    //     "@typescript-eslint/explicit-module-boundary-types": "off"
+    //   }
+    // },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true,
+      "arrowFunctions": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  }
+}
