@@ -1,5 +1,5 @@
-import { Product } from '../../types/product'
+import { CartItem, Product } from '../../types/product'
 
 export interface CartState {
-  items: Record<Product['id'], Product & { quantity: number }>
+  items: Record<Product['id'], CartItem>
 }

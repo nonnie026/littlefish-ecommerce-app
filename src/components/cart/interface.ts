@@ -1,7 +1,6 @@
-import { Product } from 'types/product'
-
+import { CartItem } from '../../types/product'
 export interface IProps {
-  cartItems: Product[]
+  cartItems: CartItem[]
   total: number
   numberOfItems: number
   handleRemoveFromCart: (productId: number) => void

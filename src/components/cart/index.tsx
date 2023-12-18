@@ -56,7 +56,7 @@ export const Cart = ({
             py={1}
             borderBottom={'1px solid #ccc'}
           >
-            <Typography variant="body1">1 x</Typography>
+            <Typography variant="body1">{`${item.quantity} x`}</Typography>
             <Box component="img" src={item.image} width={65} height={65} />
             <Box width={150}>
               <TruncatedText text={item.title} minStringLength={30} />
