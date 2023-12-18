@@ -57,7 +57,13 @@ export const HomeContainer = () => {
 
   return (
     <Grid container>
-      <Box width="100%" position="fixed" borderBottom={'1px solid #ccc'}>
+      <Box
+        width="100%"
+        bgcolor="white"
+        position="fixed"
+        borderBottom="1px solid #ccc"
+        zIndex={1}
+      >
         <TopBar />
         <Header onCartClick={handleCartClick} />
       </Box>
@@ -71,7 +77,7 @@ export const HomeContainer = () => {
         total={cartItems.reduce((acc, item) => acc + item.price, 0)}
         open={open}
       />
-      <Container sx={{ mt: 20 }} maxWidth="lg">
+      <Container sx={{ my: 20 }} maxWidth="lg">
         <Typography variant="h4" gutterBottom>
           All Products
         </Typography>

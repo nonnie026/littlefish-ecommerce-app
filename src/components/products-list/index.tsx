@@ -8,7 +8,6 @@ import {
   CardMedia,
   Grid,
   Rating,
-  Tooltip,
   Typography
 } from '@mui/material'
 import { TruncatedText } from '../../components/truncated-text'
@@ -56,22 +55,20 @@ export const ProductsList = ({ products, handleAddToCart }: IProps) => {
                 sx={{ objectFit: 'contain', width: 150, height: 150 }}
               />
             </Box>
-            <Tooltip title={product.title} placement="bottom">
-              <CardContent sx={{ px: 0, py: 2 }}>
-                <Box alignItems="center" display="flex" mb={2} gap={1.25}>
-                  <Rating
-                    name="read-only"
-                    size="small"
-                    value={product.rating.rate}
-                    readOnly
-                  />
-                  <Typography variant="caption" color="GrayText">
-                    Reviews ({product.rating.count})
-                  </Typography>
-                </Box>
-                <TruncatedText text={product.title} minStringLength={60} />
-              </CardContent>
-            </Tooltip>
+            <CardContent sx={{ px: 0, py: 2 }}>
+              <Box alignItems="center" display="flex" mb={2} gap={1.25}>
+                <Rating
+                  name="read-only"
+                  size="small"
+                  value={product.rating.rate}
+                  readOnly
+                />
+                <Typography variant="caption" color="GrayText">
+                  Reviews ({product.rating.count})
+                </Typography>
+              </Box>
+              <TruncatedText text={product.title} minStringLength={60} />
+            </CardContent>
             <CardActions sx={{ p: 0 }}>
               <Box
                 display="flex"
