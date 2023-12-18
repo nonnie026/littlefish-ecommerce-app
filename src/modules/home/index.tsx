@@ -7,8 +7,15 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
+import { useDispatch, useSelector } from 'react-redux'
 import { Cart, Header, ProductsList, TopBar } from '../../components'
 import { fetchElectronics } from '../../services/electronics'
+import {
+  getCartItemCount,
+  getCartItemsArray,
+  getCartTotal
+} from '../../store/cart/cart.selector'
+import { addToCart, removeFromCart } from '../../store/cart/cart.slice'
 import { Product } from '../../types/product'
 
 export const HomeContainer = () => {
@@ -19,7 +26,11 @@ export const HomeContainer = () => {
   } = useQuery<Product[], Error>('electronics', fetchElectronics)
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const [cartItems, setCartItems] = useState<Product[]>([])
+  const cartItems = useSelector(getCartItemsArray)
+  const itemCount = useSelector(getCartItemCount)
+  const total = useSelector(getCartTotal)
+
+  const dispatch = useDispatch()
 
   const handleCartClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -34,12 +45,12 @@ export const HomeContainer = () => {
 
   const handleAddToCart = (product: Product) => {
     console.log('product added to cart: ', product)
-    setCartItems((prev) => [...prev, product])
+    dispatch(addToCart(product))
   }
 
   const handleRemoveFromCart = (productId: number) => {
     console.log('product removed from cart: ', id)
-    setCartItems((prev) => prev.filter((item) => item.id !== productId))
+    dispatch(removeFromCart(productId))
   }
 
   if (isLoading)
@@ -65,7 +76,7 @@ export const HomeContainer = () => {
         zIndex={1}
       >
         <TopBar />
-        <Header onCartClick={handleCartClick} />
+        <Header itemsInCart={itemCount} onCartClick={handleCartClick} />
       </Box>
       <Cart
         anchorEl={anchorEl}
@@ -73,8 +84,8 @@ export const HomeContainer = () => {
         handleClose={handleClose}
         handleRemoveFromCart={handleRemoveFromCart}
         cartItems={cartItems}
-        numberOfItems={cartItems.length}
-        total={cartItems.reduce((acc, item) => acc + item.price, 0)}
+        numberOfItems={itemCount}
+        total={total}
         open={open}
       />
       <Container sx={{ my: 20 }} maxWidth="lg">
