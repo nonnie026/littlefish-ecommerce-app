@@ -1,14 +1,13 @@
-import { ShoppingCart } from '@mui/icons-material'
 import {
   Box,
   CircularProgress,
   Container,
   Grid,
-  IconButton,
   Typography
 } from '@mui/material'
+import { useState } from 'react'
 import { useQuery } from 'react-query'
-import { ProductsList, TopBar } from '../../components'
+import { Cart, Header, ProductsList, TopBar } from '../../components'
 import { fetchElectronics } from '../../services/electronics'
 import { Product } from '../../types/product'
 
@@ -19,8 +18,28 @@ export const HomeContainer = () => {
     error
   } = useQuery<Product[], Error>('electronics', fetchElectronics)
 
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
+  const [cartItems, setCartItems] = useState<Product[]>([])
+
+  const handleCartClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const open = Boolean(anchorEl)
+  const id = open ? 'shopping-cart-popover' : undefined
+
   const handleAddToCart = (product: Product) => {
-    console.log('product added to cart: ', product.title)
+    console.log('product added to cart: ', product)
+    setCartItems((prev) => [...prev, product])
+  }
+
+  const handleRemoveFromCart = (productId: number) => {
+    console.log('product removed from cart: ', id)
+    setCartItems((prev) => prev.filter((item) => item.id !== productId))
   }
 
   if (isLoading)
@@ -40,25 +59,22 @@ export const HomeContainer = () => {
     <Grid container>
       <Box width="100%" position="fixed" borderBottom={'1px solid #ccc'}>
         <TopBar />
-        <Box component={'header'} py={2}>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            maxWidth="lg"
-            mx="auto"
-          >
-            <Box display="flex" gap={2}>
-              <Box component="img" src={require('../../assets/logo.svg')} />
-              <Typography variant="h6">OurCommerce</Typography>
-            </Box>
-            <IconButton color="primary" aria-label="cart">
-              <ShoppingCart />
-            </IconButton>
-          </Box>
-        </Box>
+        <Header onCartClick={handleCartClick} />
       </Box>
+      <Cart
+        anchorEl={anchorEl}
+        id={id}
+        handleClose={handleClose}
+        handleRemoveFromCart={handleRemoveFromCart}
+        cartItems={cartItems}
+        numberOfItems={cartItems.length}
+        total={cartItems.reduce((acc, item) => acc + item.price, 0)}
+        open={open}
+      />
       <Container sx={{ mt: 20 }} maxWidth="lg">
+        <Typography variant="h4" gutterBottom>
+          All Products
+        </Typography>
         <ProductsList products={products} handleAddToCart={handleAddToCart} />
       </Container>
     </Grid>
