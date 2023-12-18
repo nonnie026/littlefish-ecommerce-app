@@ -88,7 +88,7 @@ export const HomeContainer = () => {
         total={total}
         open={open}
       />
-      <Container sx={{ my: mdDown ? 11 : 17 }} maxWidth="lg">
+      <Container sx={{ my: mdDown ? 11 : 18 }} maxWidth="lg">
         <BannerImage />
         <Typography my={5} variant="h4" gutterBottom>
           All Products

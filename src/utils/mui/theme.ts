@@ -181,7 +181,7 @@ let theme = createTheme({
 theme = createTheme(theme, {
   palette: {
     primary: theme.palette.blue,
-    secondary: { ...theme.palette.grey, main: theme.palette.grey[500] }
+    secondary: { ...theme.palette.grey, main: theme.palette.grey[400] }
   }
 })
 

@@ -1,5 +1,5 @@
 import { CancelOutlined } from '@mui/icons-material'
-import { Box, Grid, Popover, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Popover, Typography } from '@mui/material'
 import { TruncatedText } from '../../components/truncated-text'
 import { IProps } from './interface'
 
@@ -38,7 +38,7 @@ export const Cart = ({
         width={320}
         p={2}
       >
-        <Box textAlign={'center'}>
+        <Box mb={2} textAlign={'center'}>
           <Typography variant="h6">My Cart</Typography>
           <Typography color="GrayText" variant="subtitle1">
             {`${numberOfItems} ${
@@ -52,25 +52,42 @@ export const Cart = ({
             display="flex"
             gap={2}
             justifyContent={'space-between'}
-            alignItems={'center'}
+            alignItems={'flex-start'}
             py={1}
-            borderBottom={'1px solid #ccc'}
+            borderBottom="1px solid #ccc"
           >
-            <Typography variant="body1">{`${item.quantity} x`}</Typography>
-            <Box component="img" src={item.image} width={65} height={65} />
-            <Box width={150}>
-              <TruncatedText text={item.title} minStringLength={30} />
-            </Box>
-            <CancelOutlined
-              fontSize="small"
-              onClick={() => handleRemoveFromCart(item.id)}
-              style={{ cursor: 'pointer' }}
+            <Typography
+              alignSelf={'center'}
+              variant="body1"
+              minWidth={'fit-content'}
+            >{`${item.quantity} x`}</Typography>
+            <Box
+              component="img"
+              src={item.image}
+              width={65}
+              height={65}
+              sx={{ objectFit: 'contain' }}
             />
+            <Box width={150}>
+              <TruncatedText text={item.title} minStringLength={40} />
+            </Box>
+            <IconButton
+              color="secondary"
+              size="small"
+              onClick={() => handleRemoveFromCart(item.id)}
+            >
+              <CancelOutlined />
+            </IconButton>
           </Grid>
         ))}
-        <Typography variant="h6" color="primary">
-          {`Subtotal: $${total}`}
-        </Typography>
+        <Box display="flex" alignItems="center" gap={1}>
+          <Typography variant="body14B" color="grey.500">
+            Subtotal:
+          </Typography>
+          <Typography variant="body18B" color="black">
+            {` $${total.toFixed(2)}`}
+          </Typography>
+        </Box>
       </Box>
     </Popover>
   )
