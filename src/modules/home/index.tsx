@@ -76,7 +76,7 @@ export const HomeContainer = () => {
         zIndex={1}
       >
         <TopBar />
-        <Header onCartClick={handleCartClick} />
+        <Header itemsInCart={itemCount} onCartClick={handleCartClick} />
       </Box>
       <Cart
         anchorEl={anchorEl}

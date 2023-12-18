@@ -4,7 +4,7 @@ import { Product } from '../../types/product'
 import { CartState } from './interface'
 
 const initialState: CartState = {
-  items: {}
+  items: JSON.parse(localStorage.getItem('cart') || '{}')
 }
 
 const cartSlice = createSlice({
