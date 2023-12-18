@@ -30,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,13 +55,27 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@storybook/addon-essentials": "^7.6.5",
+    "@storybook/addon-interactions": "^7.6.5",
+    "@storybook/addon-links": "^7.6.5",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/addon-viewport": "^7.6.5",
+    "@storybook/blocks": "^7.6.5",
+    "@storybook/preset-create-react-app": "^7.6.5",
+    "@storybook/react": "^7.6.5",
+    "@storybook/react-webpack5": "^7.6.5",
+    "@storybook/test": "^7.6.5",
     "@types/react-redux": "^7.1.33",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
-    "prettier": "3.1.1"
+    "prettier": "3.1.1",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.6.5",
+    "webpack": "^5.89.0"
   },
   "husky": {
     "hooks": {
