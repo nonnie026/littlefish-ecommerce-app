@@ -12,7 +12,7 @@ import { ProductsList, TopBar } from '../../components'
 import { fetchElectronics } from '../../services/electronics'
 import { Product } from '../../types/product'
 
-export const ElectronicsListContainer = () => {
+export const HomeContainer = () => {
   const {
     data: products = [],
     isLoading,
@@ -49,10 +49,10 @@ export const ElectronicsListContainer = () => {
             mx="auto"
           >
             <Box display="flex" gap={2}>
-              <Box component="img" src={'../../logo.svg'} />
+              <Box component="img" src={require('../../assets/logo.svg')} />
               <Typography variant="h6">OurCommerce</Typography>
             </Box>
-            <IconButton aria-label="cart">
+            <IconButton color="primary" aria-label="cart">
               <ShoppingCart />
             </IconButton>
           </Box>

@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ElectronicsListContainer } from './modules/electronics-list'
+import { HomeContainer } from './modules/home'
 
 const queryClient = new QueryClient()
 
@@ -9,7 +9,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Grid container minHeight={'100vh'}>
         <Grid item xs={true}>
-          <ElectronicsListContainer />
+          <HomeContainer />
         </Grid>
       </Grid>
     </QueryClientProvider>
