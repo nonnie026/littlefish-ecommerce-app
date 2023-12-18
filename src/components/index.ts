@@ -1,5 +1,7 @@
 export { Cart } from './cart'
+export { ErrorMessage } from './error-message'
 export { Header } from './header'
+export { Loader } from './loader'
 export { ProductsList } from './products-list'
 export { TopBar } from './top-bar'
 export { TruncatedText } from './truncated-text'
