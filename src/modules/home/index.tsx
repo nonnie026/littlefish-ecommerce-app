@@ -1,8 +1,17 @@
-import { Box, Container, Grid, Typography } from '@mui/material'
+import {
+  Box,
+  Container,
+  Grid,
+  Theme,
+  Typography,
+  useMediaQuery
+} from '@mui/material'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
+
 import {
+  BannerImage,
   Cart,
   ErrorMessage,
   Header,
@@ -35,6 +44,8 @@ export const HomeContainer = () => {
     isLoading,
     error
   } = useQuery<Product[], Error>('electronics', fetchElectronics)
+
+  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
   const handleCartClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -77,8 +88,9 @@ export const HomeContainer = () => {
         total={total}
         open={open}
       />
-      <Container sx={{ my: 20 }} maxWidth="lg">
-        <Typography mb={5} variant="h4" gutterBottom>
+      <Container sx={{ my: mdDown ? 11 : 17 }} maxWidth="lg">
+        <BannerImage />
+        <Typography my={5} variant="h4" gutterBottom>
           All Products
         </Typography>
         <ProductsList products={products} handleAddToCart={handleAddToCart} />

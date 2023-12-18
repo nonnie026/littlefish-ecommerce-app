@@ -1,3 +1,4 @@
+export { BannerImage } from './banner-image'
 export { Cart } from './cart'
 export { ErrorMessage } from './error-message'
 export { Header } from './header'

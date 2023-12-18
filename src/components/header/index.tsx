@@ -16,15 +16,15 @@ export const Header = ({ onCartClick, itemsInCart }: IProps) => (
         <Box component="img" width={33} height={33} src={logo} />
         <Typography variant="h6">OurCommerce</Typography>
       </Box>
-      <Badge badgeContent={itemsInCart} color="primary">
-        <IconButton
-          aria-label="cart"
-          onClick={onCartClick}
-          sx={{ color: 'black' }}
-        >
+      <IconButton
+        aria-label="cart"
+        onClick={onCartClick}
+        sx={{ color: 'black' }}
+      >
+        <Badge badgeContent={itemsInCart} showZero color="primary">
           <ShoppingCart />
-        </IconButton>
-      </Badge>
+        </Badge>
+      </IconButton>
     </Box>
   </Box>
 )
