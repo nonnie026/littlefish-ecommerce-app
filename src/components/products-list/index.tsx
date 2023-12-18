@@ -25,7 +25,7 @@ export const ProductsList = ({ products, handleAddToCart }: IProps) => {
           sm={6}
           md={4}
           lg={2.25}
-          px={3.25}
+          px={2}
         >
           <Card>
             <Box
