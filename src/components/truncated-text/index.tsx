@@ -9,7 +9,7 @@ export const TruncatedText = ({ minStringLength, text }: IProps) => {
       : text
 
   return (
-    <Typography data-testid="truncated-text" variant="caption">
+    <Typography data-testid="truncated-text" variant="body14">
       {truncatedString}
     </Typography>
   )

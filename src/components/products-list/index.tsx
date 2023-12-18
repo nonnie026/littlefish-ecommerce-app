@@ -43,6 +43,7 @@ export const ProductsList = ({ products, handleAddToCart }: IProps) => {
                   display="flex"
                   alignItems="center"
                   gap={0.5}
+                  color={'success.main'}
                 >
                   <CheckCircle fontSize="inherit" color="success" />
                   <Typography variant="inherit">in stock</Typography>
@@ -68,7 +69,7 @@ export const ProductsList = ({ products, handleAddToCart }: IProps) => {
                       value={product.rating.rate}
                       readOnly
                     />
-                    <Typography variant="caption" color="GrayText">
+                    <Typography variant="body12" color="grey.400">
                       Reviews ({product.rating.count})
                     </Typography>
                   </Box>
@@ -82,8 +83,12 @@ export const ProductsList = ({ products, handleAddToCart }: IProps) => {
                   justifyContent={'space-between'}
                   flexGrow={1}
                 >
-                  <Typography variant="body2" color="textPrimary">
-                    ${product.price}
+                  <Typography
+                    variant="body2"
+                    color="textPrimary"
+                    sx={{ textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }}
+                  >
+                    ${product.price.toFixed(2)}
                   </Typography>
                   <Button
                     onClick={() => handleAddToCart(product)}

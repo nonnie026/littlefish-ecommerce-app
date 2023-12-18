@@ -78,7 +78,7 @@ export const HomeContainer = () => {
         open={open}
       />
       <Container sx={{ my: 20 }} maxWidth="lg">
-        <Typography variant="h4" gutterBottom>
+        <Typography mb={5} variant="h4" gutterBottom>
           All Products
         </Typography>
         <ProductsList products={products} handleAddToCart={handleAddToCart} />

@@ -11,12 +11,12 @@ let theme = createTheme({
       '200': '#A1B0EC',
       '300': '#7388E2',
       '400': '#4461D9',
-      '500': '#1539CF',
+      '500': '#0156FF',
       '600': '#112EA6',
       '700': '#0D227C',
       '800': '#081753',
       '900': '#040B29',
-      main: '#1539CF'
+      main: '#0156FF'
     },
     error: {
       '50': '#F7F5F5',
@@ -40,7 +40,7 @@ let theme = createTheme({
     success: {
       '50': '#F5F7F4',
       '100': '#E7F0E3',
-      main: '#5B993D'
+      main: '#78A962'
     },
     text: {
       primary: '#101114',
@@ -181,7 +181,7 @@ let theme = createTheme({
 theme = createTheme(theme, {
   palette: {
     primary: theme.palette.blue,
-    secondary: theme.palette.grey
+    secondary: { ...theme.palette.grey, main: theme.palette.grey[500] }
   }
 })
 

@@ -5,19 +5,23 @@ import logo from '../../assets/logo.svg'
 import { IProps } from './interface'
 
 export const Header = ({ onCartClick, itemsInCart }: IProps) => (
-  <Box component="header" py={4} maxWidth="lg" mx="auto">
+  <Box component="header" py={3} maxWidth="lg" mx="auto">
     <Box
       display="flex"
       px={3}
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box display="flex" gap={3}>
-        <Box component="img" src={logo} />
+      <Box display="flex" gap={2}>
+        <Box component="img" width={33} height={33} src={logo} />
         <Typography variant="h6">OurCommerce</Typography>
       </Box>
       <Badge badgeContent={itemsInCart} color="primary">
-        <IconButton color="primary" aria-label="cart" onClick={onCartClick}>
+        <IconButton
+          aria-label="cart"
+          onClick={onCartClick}
+          sx={{ color: 'black' }}
+        >
           <ShoppingCart />
         </IconButton>
       </Badge>
