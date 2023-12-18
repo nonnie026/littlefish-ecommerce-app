@@ -3,14 +3,12 @@ import '@material-ui/core/styles'
 declare module '@mui/material/styles' {
   interface Palette {
     blue: Palette['primary']
-    pink: Palette['primary']
-    grey: Palette['secondary']
+    grey: Palette['primary']
   }
 
   interface PaletteOptions {
     blue?: PaletteOptions['primary']
-    pink?: PaletteOptions['primary']
-    grey?: PaletteOptions['secondary']
+    grey?: PaletteOptions['primary']
   }
 
   interface TypographyVariants {
