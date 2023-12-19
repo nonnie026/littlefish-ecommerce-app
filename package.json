@@ -2,6 +2,7 @@
   "name": "littlefish-ecommerce-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nonnie026.github.io/littlefish-ecommerce-app",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -29,7 +30,9 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "build-storybook": "storybook build",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -73,6 +76,7 @@
     "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.1.0",
     "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
