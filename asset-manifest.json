@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/littlefish-ecommerce-app/static/css/main.c2f56e0f.css",
+    "main.js": "/littlefish-ecommerce-app/static/js/main.a9ce88a0.js",
+    "static/js/787.f9871372.chunk.js": "/littlefish-ecommerce-app/static/js/787.f9871372.chunk.js",
+    "static/media/banner.svg": "/littlefish-ecommerce-app/static/media/banner.125e96281781640b2e1f0a03b1b55aac.svg",
+    "index.html": "/littlefish-ecommerce-app/index.html",
+    "static/media/logo.svg": "/littlefish-ecommerce-app/static/media/logo.6495c660faf6bb4213f73ab7bc43ef84.svg",
+    "main.c2f56e0f.css.map": "/littlefish-ecommerce-app/static/css/main.c2f56e0f.css.map",
+    "main.a9ce88a0.js.map": "/littlefish-ecommerce-app/static/js/main.a9ce88a0.js.map",
+    "787.f9871372.chunk.js.map": "/littlefish-ecommerce-app/static/js/787.f9871372.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2f56e0f.css",
+    "static/js/main.a9ce88a0.js"
+  ]
+}
