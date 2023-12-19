@@ -17,7 +17,15 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./src/**/*", "**/*.ts", "**/*.tsx"],
+  "types": ["node", "jest", "jest/globals", "@testing-library/jest-dom"],
+  "include": [
+    "@types/react",
+    "./src/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "__mocks__",
+    "jest.config.js"
+  ],
   "exclude": [
     "node_modules",
     "build",

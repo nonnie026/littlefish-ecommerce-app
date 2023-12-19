@@ -5,10 +5,11 @@
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:jest-dom/recommended"
   ],
   "ignorePatterns": ["!**/*", "build/**/*", "!*.config.ts"],
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "jest-dom"],
   "overrides": [
     // {
     // 	"files": ["tests/**", "*.test.tsx", "*.test.ts"],

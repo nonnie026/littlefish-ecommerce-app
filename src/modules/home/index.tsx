@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Theme,
-  Typography,
-  useMediaQuery
-} from '@mui/material'
+import { Box, Container, Grid, Theme, useMediaQuery } from '@mui/material'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
@@ -32,6 +25,7 @@ export const HomeContainer = () => {
   const dispatch = useDispatch()
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
+
   const cartItems = useSelector(getCartItemsArray)
   const itemCount = useSelector(getCartItemCount)
   const total = useSelector(getCartTotal)
@@ -90,9 +84,6 @@ export const HomeContainer = () => {
       />
       <Container sx={{ my: mdDown ? 11 : 18 }} maxWidth="lg">
         <BannerImage />
-        <Typography my={5} variant="h4" gutterBottom>
-          All Products
-        </Typography>
         <ProductsList products={products} handleAddToCart={handleAddToCart} />
       </Container>
     </Grid>
