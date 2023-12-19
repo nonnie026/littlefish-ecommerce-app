@@ -1,3 +1,7 @@
+# Demo
+
+Visit this [link](https://nonnie026.github.io/littlefish-ecommerce-app/)
+
 # OurCommerce App
 
 Littlefish take home interview project.
