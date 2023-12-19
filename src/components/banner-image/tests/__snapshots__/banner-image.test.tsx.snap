@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerImage renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-l5bi8q"
+  >
+    <img
+      alt="banner"
+      class="MuiBox-root css-6jrdpz"
+      src=""
+    />
+  </div>
+</DocumentFragment>
+`;

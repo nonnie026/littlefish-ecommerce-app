@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders correctly with no items 1`] = `<DocumentFragment />`;
+
+exports[`Cart renders snapshot 1`] = `<DocumentFragment />`;

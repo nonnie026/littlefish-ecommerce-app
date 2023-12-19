@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBart renders snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-mtkkfu"
+  >
+    <div
+      class="MuiBox-root css-1axa72v"
+    >
+      <div
+        class="MuiGrid-root css-19fssl2-MuiGrid-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1yxn50p-MuiTypography-root"
+        >
+          Mon - Thu: 
+          <strong>
+            9:00 AM - 5:30 PM
+          </strong>
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1yxn50p-MuiTypography-root"
+        >
+          Visit our showroom in 1234 Street Adress City Address, 1234 
+          <strong
+            color="white"
+          >
+            Contact us
+          </strong>
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1yxn50p-MuiTypography-root"
+        >
+          <strong>
+            (00) 1234 5678
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

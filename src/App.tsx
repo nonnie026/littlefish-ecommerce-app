@@ -1,24 +1,18 @@
-import './App.css'
-import logo from './logo.svg'
+import { Grid } from '@mui/material'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { HomeContainer } from './modules/home'
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Grid container minHeight={'100vh'}>
+        <Grid item xs={true}>
+          <HomeContainer />
+        </Grid>
+      </Grid>
+    </QueryClientProvider>
   )
 }
 

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TruncatedText matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="MuiTypography-root MuiTypography-body14 css-37jdci-MuiTypography-root"
+    data-testid="truncated-text"
+  >
+    This is a ...
+  </span>
+</DocumentFragment>
+`;
