@@ -1,7 +1,7 @@
 import { Middleware, configureStore } from '@reduxjs/toolkit'
 import cartReducer from './cart/cart.slice'
 
-const saveToLocalStorage: Middleware = (store) => (next) => (action) => {
+export const saveToLocalStorage: Middleware = (store) => (next) => (action) => {
   const result = next(action)
   const state = store.getState()
   localStorage.setItem('cart', JSON.stringify(state.cart.items))
