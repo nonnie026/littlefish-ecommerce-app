@@ -1,4 +1,3 @@
-// src/services/productService.ts
 import { Product } from '../../types/product'
 
 const API_URL = 'https://fakestoreapi.com/products/category/electronics'
