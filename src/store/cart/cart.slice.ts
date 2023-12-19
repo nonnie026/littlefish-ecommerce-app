@@ -23,11 +23,13 @@ const cartSlice = createSlice({
       delete state.items[action.payload]
     },
     incrementQuantity(state, action: PayloadAction<Product['id']>) {
+      // Beyond the scope
       const product = state.items[action.payload]
       if (product) {
         product.quantity += 1
       }
     },
+    // Beyond the scope
     decrementQuantity(state, action: PayloadAction<Product['id']>) {
       const product = state.items[action.payload]
       if (product) {
@@ -38,6 +40,7 @@ const cartSlice = createSlice({
         }
       }
     },
+    // Beyond the scope
     clearCart(state) {
       state.items = initialState.items
     }
