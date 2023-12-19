@@ -17,6 +17,7 @@ export const Header = ({ onCartClick, itemsInCart }: IProps) => (
         <Typography variant="h6">OurCommerce</Typography>
       </Box>
       <IconButton
+        data-testid="cart-button"
         aria-label="cart"
         onClick={onCartClick}
         sx={{ color: 'black' }}

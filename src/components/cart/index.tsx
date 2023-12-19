@@ -39,7 +39,9 @@ export const Cart = ({
         p={2}
       >
         <Box mb={2} textAlign={'center'}>
-          <Typography variant="h6">My Cart</Typography>
+          <Typography data-testid="my-cart" variant="h6">
+            My Cart
+          </Typography>
           <Typography color="GrayText" variant="subtitle1">
             {`${numberOfItems} ${
               numberOfItems === 1 ? 'item' : 'items'
@@ -60,10 +62,13 @@ export const Cart = ({
               alignSelf={'center'}
               variant="body1"
               minWidth={'fit-content'}
+              data-testid="quantity"
             >{`${item.quantity} x`}</Typography>
             <Box
               component="img"
               src={item.image}
+              alt={item.title}
+              data-testid="image"
               width={65}
               height={65}
               sx={{ objectFit: 'contain' }}
@@ -74,6 +79,7 @@ export const Cart = ({
             <IconButton
               color="secondary"
               size="small"
+              data-testid="remove-item"
               onClick={() => handleRemoveFromCart(item.id)}
             >
               <CancelOutlined />
@@ -84,7 +90,7 @@ export const Cart = ({
           <Typography variant="body14B" color="grey.500">
             Subtotal:
           </Typography>
-          <Typography variant="body18B" color="black">
+          <Typography data-testid="total" variant="body18B" color="black">
             {` $${total.toFixed(2)}`}
           </Typography>
         </Box>
